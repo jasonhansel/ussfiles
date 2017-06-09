@@ -1,0 +1,13 @@
+#!/bin/bash
+echo "Removing tag..."
+chtag -r $1
+if [[ `cat -B $1 | tr -Cd '\000' | wc -c` -ne 0 ]] ; then
+	echo "Tagging as binary..."
+	chtag -b $1
+elif [[ `cat -B $1 | tr -d [:lower:] | wc -c` -lt `cat $1 | wc -c` ]] ; then
+	echo "Tagging as EBCDIC..."
+	chtag -tc 1047 $1
+else
+	echo "Tagging as ASCII..."
+	chtag -tc ISO8859-1 $1
+fi

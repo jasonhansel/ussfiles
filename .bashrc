@@ -42,3 +42,7 @@ alias tagE='chtag -tc 1047 '
 alias tagA='chtag -tc ISO8859-1 '
 alias tagB='chtag -b '
 alias untag='chtag -r '
+
+# Allow for easy access to various scripts present in this folder.
+# You may need to change the path below:
+export PATH=$PATH:~/ussfiles/scripts
