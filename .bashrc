@@ -1,6 +1,9 @@
 # Misc bash options
 shopt -s autocd checkwinsize checkjobs extglob globstar  
 
+# Make bash use a better pager
+export MANPAGER='less'
+
 # Setup prompt
 PS1="[\u@\h \W]\\$ "
 PS2="> "
