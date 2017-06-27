@@ -1,0 +1,7 @@
+[user]
+	name = Jason Hansel
+	email = jason@jasonhansel.com
+[push]
+	default = matching
+[alias]
+	st = status

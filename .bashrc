@@ -13,8 +13,9 @@ export TERM=$TERM
 export TERMINFO=$TERMINFO
 
 # Node.js configuration
-export PATH=/proj/mvd/node/installs/node-v0.12.18-os390-s390x/bin:$PATH
-export NODE_PATH=/proj/mvd/node/installs/node-v0.12.18-os390-s390x/lib/node_modules
+PROJNODE=$(echo /proj/*/node)
+export PATH=$PROJNODE/installs/node-v0.12.18-os390-s390x/bin:$PATH
+export NODE_PATH=$PROJNODE/installs/node-v0.12.18-os390-s390x/lib/node_modules
 
 # Git configuration, based on z/OS Git release notes
 export ZOS_GIT_DIR=/rsusr/portgit
@@ -23,7 +24,8 @@ export _CEE_RUNOPTS='FILETAG(AUTOCVT,AUTOTAG) POSIX(ON)'
 export _TAG_REDIR_IN=txt
 export _TAG_REDIR_OUT=txt
 export _TAG_REDIR_ERR=txt
-export PATH=$ZOS_GIT_DIR/bin:$PATH
+# We put git at the end of the path to avoid overriding bash
+export PATH=$PATH:$ZOS_GIT_DIR/bin
 export LIBPATH=$ZOS_GIT_DIR/lib/perl5/5.24.0/os390/CORE:$LIBPATH
 export PERL5LIB=$ZOS_GIT_DIR/lib/perl5
 export MANPATH=$ZOS_GIT_DIR/man:$MANPATH
