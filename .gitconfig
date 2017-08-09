@@ -2,6 +2,6 @@
 	name = Jason Hansel
 	email = jason@jasonhansel.com
 [push]
-	default = matching
+	default = upstream 
 [alias]
 	st = status

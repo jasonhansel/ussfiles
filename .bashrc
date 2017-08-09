@@ -2,10 +2,11 @@
 shopt -s autocd checkwinsize checkjobs extglob globstar  
 
 # Make bash use a better pager
+export PAGER='less'
 export MANPAGER='less -R '
 
 # Setup prompt
-PS1="[\u@\h \W]\\$ "
+PS1="$(tput setaf 11)[\u@\h \W] $(tput sgr0)"
 PS2="> "
 
 # vim on z/OS has problems; suggest vi instead
